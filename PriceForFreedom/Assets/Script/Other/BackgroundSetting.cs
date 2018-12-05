@@ -9,7 +9,7 @@ public class BackgroundSetting : MonoBehaviour {
 
     public static int PlayerLayer = 9, GroundLayer = 12, BodyPartLayer = 13, DullLayer = 14, ObstacleLayer = 15;
 
-    public static int totalLevel = 12, curLevel = 1, highestLevel = 1;   //dont need totalLevel now
+    public static int totalLevel = 12, curLevel = 1, highestLevel = 1;   
 
     public static Material highlightMat, bloodRedMat;
 

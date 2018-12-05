@@ -29,4 +29,21 @@ public class LevelButtonLoad : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void UnlockAllLevel()
+    {
+        BackgroundSetting.highestLevel = buttonCount;  //BackgroundSetting.totalLevel;
+
+        playerHighestLevel = BackgroundSetting.highestLevel;
+        if (BackgroundSetting.totalLevel != buttonCount)
+        {
+            Debug.LogWarning("button in level selection not match with total level in BGsetting");
+        }
+
+        for (int i = 0; i < playerHighestLevel; i++)
+        {
+            buttonList[i] = transform.GetChild(i).GetComponent<Button>();
+            buttonList[i].interactable = true;
+        }
+    }
 }
