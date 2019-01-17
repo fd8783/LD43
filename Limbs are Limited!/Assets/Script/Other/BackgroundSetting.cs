@@ -15,6 +15,8 @@ public class BackgroundSetting : MonoBehaviour {
 
     public static bool haveLive = false;
 
+    public GameObject gameJoltUI;
+
     // Use this for initialization
     void Awake () {
         if (Instance == null)
@@ -34,7 +36,11 @@ public class BackgroundSetting : MonoBehaviour {
 	void Update () {
         if (Input.GetKey(KeyCode.Escape))
         {
-            Application.Quit();
+            if (gameJoltUI.activeSelf) return;
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+                Application.Quit();
+            else
+                SceneManager.LoadScene(0);
         }
     }
 
